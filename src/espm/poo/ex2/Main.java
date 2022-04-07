@@ -11,24 +11,30 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Boolean exit = false;
         while(!exit){
-            System.out.print("ESPM> ");
-             String input = scan.nextLine().trim().toLowerCase();
+            try{
+                System.out.print("ESPM> ");
+                String input = scan.nextLine().trim().toLowerCase();
 
-            if("".equals(input)){ //trim é para limpar espaços a direita e esquerda das entradas de dados feitas pelo usuário
-        
-            }else if("exit".equals(input)){
-                exit = true;
-            }else if("help".equals(input)){
-                 help();
+                if("".equals(input)){ //trim é para limpar espaços a direita e esquerda das entradas de dados feitas pelo usuário
+            
+                }else if("exit".equals(input)){
+                    exit = true;
+                }else if("help".equals(input)){
+                    help();
 
-            }else if("list".equals(input)){
-                listCustomers(banco);
+                }else if("list".equals(input)){
+                    listCustomers(banco);
+                    
+                }else if("add".equals(input)){
+                    addCustomer(banco);
+                }else if("find".equals(input)){
+                    throw new UnsupportedOperationException();
+                }else{
+                    System.err.println("Comando invalido"); 
+                }
                 
-            }else if("add".equals(input)){
-                addCustomer(banco);
-
-            }else{
-                System.err.println("Comando invalido"); 
+            } catch(UnsupportedOperationException e){
+                e.printStackTrace();
             }
 
         }
