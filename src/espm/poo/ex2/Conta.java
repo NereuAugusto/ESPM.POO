@@ -24,7 +24,4 @@ public class Conta {
         this.saldo = this.saldo + valor;
     }
 
-    public Conta getConta(){
-        return conta;
-    }
 }
