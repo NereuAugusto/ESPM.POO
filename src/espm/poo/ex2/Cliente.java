@@ -1,11 +1,11 @@
 package espm.poo.ex2;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
     private Conta conta;
 
     public Cliente(){
-        this.conta = new Conta(this);
+        //this.conta = new Conta(this);
     }
 
     public void setNome(String nome){
