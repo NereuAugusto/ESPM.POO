@@ -9,5 +9,8 @@ public class Livro {
         this.a = new Autor(nome, cidade);
     }
 
+    public Livro(){
+        
+    }
     
 }

@@ -54,12 +54,15 @@ public class Main {
     }
 
     private static void listCustomers(Banco banco){
-      
-       banco.getClientes().forEach(c ->{
-           String tp = c instanceof PessoaFisica ? "f" : "j";
-        System.out.println(tp + " " + c);
-
-       });
+        banco.getClientes().forEach(c -> {
+            if(c instanceof PessoaFisica) {
+                PessoaFisica pf = (PessoaFisica) (c);
+                System.out.println(pf);
+            } else if(c instanceof PessoaJuridica) {
+                PessoaJuridica pj = (PessoaJuridica) (c);
+                System.out.println(pj);
+            }
+        });
     }
     
     private static void addCustomer(Banco banco){
